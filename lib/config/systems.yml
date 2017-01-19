@@ -1,0 +1,31 @@
+#If testing machine, accounts rails should be started in development env.
+test:
+  user:
+    host: localhost
+    port: 4401
+    
+  machine:
+    host: localhost
+    port: 4402
+    
+development:
+  user:
+    host: localhost
+    port: 4401
+  
+  machine:
+    host: localhost
+    port: 4402
+
+# Production is assumed to run in docker containers
+production:
+  # Docker hosts running Puma on 3000
+  user:
+    secure: true
+    host: system-track-accounts
+    port: 3000
+  
+  machine:
+    secure: true
+    host: system-track-machines
+    port: 3000
